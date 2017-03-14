@@ -1,0 +1,136 @@
+﻿.listing-list-item
+{
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.listing-list-item h1.price
+{
+    margin-bottom: 6px;    
+}
+
+.listing-list-item .location-bar
+{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.listing-list-item .panel-heading .badge
+{
+    font-family: sans-serif;
+}
+
+.listing-list-item .panel-heading .address
+{
+    color: #195d69;
+    font-weight: bold;
+}
+
+.listing-list-item .panel-heading .accommodation-type
+{
+    color: #195d69;
+    font-weight: bold;     
+}
+
+.listing-list-item .panel-heading .campus
+{
+    color: #333;
+    font-weight: bold;
+}
+
+.listing-list-item .panel-footer
+{
+    background-color: #fcfcfc;
+    border-top: 1px solid #eee;    
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.listing-list-item a
+{
+    color: #bd5494;
+}
+
+.listing-list-item a i
+{
+    color: #aaa;
+    margin-right: 4px;
+}
+
+.listing-list-item .list-details
+{
+    margin-left: 1em;
+}
+
+.listing-list-item .list-details li
+{
+    padding: 4px 4px; 
+    border-bottom: 1px dashed #ddd;   
+}
+
+.listing-list-item .list-details li i
+{
+    color: #175661;
+}
+
+.listing-list-item .description
+{  
+    color: #555;
+    font-family: sans-serif;
+    font-size: 12px; 
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.listing-list-item .list-details
+{
+    color: #777;        
+}
+
+.listing-list-item .list-inline
+{
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.listing-list-item .list-inline > li
+{    
+    position: relative;
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.list-inline li:not(:first-child):before
+{
+    position: absolute;
+    top: 0;
+    left: -2px;
+    bottom: 0;
+    width: 2px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #fff;  
+    content: "";
+}
+
+.listing-list-item a.cover-photo-container
+{        
+    border-radius: 4px;
+    border: 1px solid #ddd;    
+    margin-bottom: 15px;
+}
+
+.listing-list-item .cover-photo
+{
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    right: 4px;
+}
+
+.listing-list-item .badge.distance
+{
+    background-color: #2d8291;
+}
