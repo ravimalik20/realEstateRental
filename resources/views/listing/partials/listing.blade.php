@@ -5,14 +5,11 @@
        <div class="ribbon ribbon-left red" data-bind="visible: $parent.repeater.showMyListingRibbon($data)" style="display: none;">
           <a>My Listing</a>
        </div>
-       <!-- ko template: { name: 'listing-cover-photo-template' } -->
        <a href="/listing/ViewListing.aspx?id=913" class="cover-photo-container" data-bind="href: '/listing/ViewListing.aspx?id=' + listingId">
-          <!-- ko if: coverPhoto() -->
           <div class="cover-photo" data-bind="style: { 'background-image': 'url(' + coverPhoto().thumbnailUrl() + ')' }" style="background-image: url(&quot;/listing/photos/16868_thumb.jpg&quot;);"></div>
-          <!-- /ko -->
-          <!-- ko if: !coverPhoto() --><!-- /ko -->
+          
        </a>
-       <!-- /ko -->
+       
     </div>
     <!-- Details -->
     <div class="panel-body">
@@ -83,16 +80,12 @@
     </div>
     <!-- /.panel-body -->
     <div class="panel-footer clearfix">
-       <!-- ko if: $parent.repeater.showStatus() --><!-- /ko -->
        <div class="btn-group-separated pull-right">
-          <!-- ko if: $parent.repeater.showEditControls($data) --><!-- /ko -->
-          <!-- View Details Button -->
-          <a href="/Listing/ViewListing.aspx?id=913" class="btn btn-xs btn-primary" data-bind="href: '/Listing/ViewListing.aspx?id=' + listingId">
-          <span>View Details</span>
-          <i class="fa fa-arrow-circle-right"></i>
+          <a href="/listing/1" class="btn btn-xs btn-primary">
+		      <span>View Details</span>
+		      <i class="fa fa-arrow-circle-right"></i>
           </a>
        </div>
-       <!-- /.button-group-separated -->
     </div>
     <!-- /.panel-footer -->
  </div>
