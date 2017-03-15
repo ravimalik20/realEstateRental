@@ -27,7 +27,7 @@
 		                            <span class="input-group-addon">
 		                                <i class="fa fa-institution fa-fw"></i>
 		                            </span>
-		                            <select id="CampusDropDown" class="form-control">
+		                            <select id="CampusDropDown" class="form-control" name="campus">
 										<option value="">Any</option>
 									@if (isset($campuses) && count($campuses) > 0)
 									@foreach ($campuses as $campus)
@@ -45,7 +45,7 @@
 		                            <span class="input-group-addon">
 		                                <i class="fa fa-building-o fa-fw"></i>
 		                            </span>
-		                            <select id="AccommodationTypeDropDown" class="form-control">
+		                            <select id="AccommodationTypeDropDown" class="form-control" name="housing_type">
 										<option value="">Any</option>
 									@if (isset($housing_types) && count($housing_types) > 0)
 									@foreach ($housing_types as $type)
@@ -63,7 +63,7 @@
 		                            <span class="input-group-addon">
 		                                <i class="fa fa-bed fa-fw"></i>
 		                            </span>
-		                            <select id="Select3" class="form-control">
+		                            <select id="Select3" class="form-control" name="bedroom">
 										<option value="">Any</option>
 									@if (isset($bedrooms) && count($bedrooms) > 0)
 									@foreach ($bedrooms as $bedroom)
@@ -83,7 +83,7 @@
 		                            <span class="input-group-addon">
 		                                <i class="fa fa-male fa-fw"></i>
 		                            </span>
-		                            <select id="Select4" class="form-control">
+		                            <select id="Select4" class="form-control" name="bathroom">
 										<option value="">Any</option>
 									@if (isset($bathrooms) && count($bathrooms) > 0)
 									@foreach ($bathrooms as $bathroom)
@@ -109,7 +109,7 @@
 		                            <span class="input-group-addon">
 		                                <i class="fa fa-dollar fa-fw"></i>
 		                            </span>
-		                            <select id="MinPriceDropDown" class="form-control">
+		                            <select id="MinPriceDropDown" class="form-control" name="price_range_min">
 									@if (isset($price_ranges) && count($price_ranges) > 0)
 									@foreach ($price_ranges as $range)
 										<option value="{{$range->name}}">{{$range->name}}</option>
@@ -117,7 +117,7 @@
 									@endif
 		                            </select>
 		                            <span class="input-group-addon fa-fw">to</span>
-		                            <select id="MaxPriceDropDown" class="form-control">
+		                            <select id="MaxPriceDropDown" class="form-control" name="price_range_max">
 										<option value="">Unlimited</option>
 									@if (isset($price_ranges) && count($price_ranges) > 0)
 									@foreach ($price_ranges as $range)
@@ -182,11 +182,11 @@
                             <p class="lead text-muted">Our streamlined service for landlords allows you to create professional listings within minutes.</p>
 
 
-                            <a href="/Landlord/CreateNewAccount.aspx" style="width: 180px;" class="btn btn-lg btn-success">Create an account</a>
+                            <a href="/register" style="width: 180px;" class="btn btn-lg btn-success">Create an account</a>
 
                             <span style="margin-left: 1em; margin-right: 1em;">or</span>
 
-                            <a href="/landlord/SignIn.aspx">Sign In&nbsp;<i class="fa fa-sign-in"></i></a>
+                            <a href="/login">Sign In&nbsp;<i class="fa fa-sign-in"></i></a>
                         </div>
 
                     </div>                                                                          
@@ -229,10 +229,10 @@
                             <!-- Price -->
                             <div class="price">
                                 <span class="note">$</span>
-                                <span class="value" data-bind="text: listingDuration().price">&nbsp;</span>
+                                <span class="value">&nbsp;</span>
                             </div>
 
-                            <p>per listing/<span data-bind="text: listingDuration().description.toLowerCase()"></span></p>
+                            <p>per listing/<span></span></p>
 
                         </div>
                         <div class="panel-footer">
