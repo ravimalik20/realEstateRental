@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('extra=styles')
+@section('extra-styles')
 
 	<link rel="stylesheet" type="text/css" href="/css/index.css"></style>
 
