@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(\PriceRangeSeeder::class);
 		$this->call(\AmenitiesSeeder::class);
 		$this->call(\RestrictionsSeeder::class);
+		$this->call(\CountrySeeder::class);
+		$this->call(\InitialPaymentTypeSeeder::class);
     }
 }
