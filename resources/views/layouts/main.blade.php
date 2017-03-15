@@ -50,7 +50,7 @@
     <link rel="stylesheet" type="text/css" href="/css/listing-grid-view.css" />
     <link rel="stylesheet" type="text/css" href="/css/pager.css" />
 
-	@yield('extra=styles')
+	@yield('extra-styles')
 
 	<!-- Scripts -->
     <script>
@@ -109,7 +109,7 @@
                     <ul class="nav navbar-right navbar-nav nav-main">
 
                         <li>
-                            <a href="#">Search Listings</a>
+                            <a href="/listing">Search Listings</a>
                         </li>
 
                         

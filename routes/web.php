@@ -16,3 +16,8 @@ Route::get('/', 'IndexController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/listing/search', 'ListingController@search');
+Route::resource('listing', 'ListingController');
+
+?>
