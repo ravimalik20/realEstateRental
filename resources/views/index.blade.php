@@ -36,7 +36,7 @@
             <span><i class="icon-safety-shower"></i>2 bathrooms</span>
           </div>
           <div class="bottom row">
-            <div class="col-sm-6"><span> <i class="icon-icons74"></i>Bayonne, New Jersey</span></div>
+            <div class="col-sm-6"><span> <i class="icon-icons74"></i>72 Amherst Dr, ON N2P 1C9</span></div>
             <div class="col-sm-6"><span>$8,600 Per Month -<small> Apartment</small></span></div>
           </div>
         </div>
@@ -66,7 +66,7 @@
             <span><i class="icon-safety-shower"></i>2 bathrooms</span>
           </div>
           <div class="bottom row">
-            <div class="col-sm-6"><span> <i class="icon-icons74"></i>Bayonne, New Jersey</span></div>
+            <div class="col-sm-6"><span> <i class="icon-icons74"></i>Hudsonbay, ON N2P 1C9</span></div>
             <div class="col-sm-6"><span>$8,600 Per Month - Apartment</span></div>
           </div>
         </div>
@@ -96,7 +96,7 @@
             <span><i class="icon-safety-shower"></i>2 bathrooms</span>
           </div>
           <div class="bottom row">
-            <div class="col-sm-6"><span> <i class="icon-icons74"></i>Bayonne, New Jersey</span></div>
+            <div class="col-sm-6"><span> <i class="icon-icons74"></i>London, ON N2P 1C9</span></div>
             <div class="col-sm-6"><span>$8,600 Per Month - Apartment</span></div>
           </div>
         </div>

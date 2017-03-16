@@ -47,21 +47,21 @@
 		        <div class="icons"><i class="fa fa-phone"></i></div>
 		        <ul>
 		          <li><strong>Phone Number</strong></li>
-		          <li>+1 900 234 567 - 68</li>
+		          <li>+1 519-748-5220</li>
 		        </ul>
 		      </div>
 		      <div class="info-box">
 		        <div class="icons"><i class="fa fa-building"></i></div>
 		        <ul>
-		          <li><strong>Manhattan Hall,</strong></li>
-		          <li>Castle Melbourne, australia</li>
+		          <li><strong>Conestoga College</strong></li>
+		          <li>Ontario, Canada</li>
 		        </ul>
 		      </div>
 		      <div class="info-box">
 		        <div class="icons"><i class="fa fa-envelope"></i></div>
 		        <ul>
 		          <li><strong>Email Address</strong></li>
-		          <li><a href="javascript:void(0)">info@realtyhomes.com</a></li>
+		          <li><a href="javascript:void(0)">abc@xyz.com</a></li>
 		        </ul>
 		      </div>
 		    </div>
@@ -139,10 +139,10 @@
 		    <div class="footer_panel bottom30">
 		      <h4 class="bottom30">Get in Touch</h4>
 		      <ul class="getin_touch">
-		        <li><i class="fa fa-phone"></i>01 900 234 567 - 68</li>
-		        <li><a href="javascript:void(0)"><i class="fa fa-envelope"></i>info@realtyhomes.com</a></li>
-		        <li><a href="javascript:void(0)"><i class="fa fa-arrow-right"></i>www.realtyhomes.com</a></li>
-		        <li><i class="fa fa-building"></i>Advisor Melbourne, Merrick Way,FL 12345 australia</li>
+		        <li><i class="fa fa-phone"></i>+1 519-748-5220</li>
+		        <li><a href="javascript:void(0)"><i class="fa fa-envelope"></i>info@abc.com</a></li>
+		        <li><a href="javascript:void(0)"><i class="fa fa-arrow-right"></i>http://www.conestogac.on.ca/</a></li>
+		        <li><i class="fa fa-building"></i>299 Doon Valley Dr, Kitchener, ON N2G 4M4, Canada</li>
 		      </ul>
 		    </div>
 		  </div>
