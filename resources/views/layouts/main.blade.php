@@ -1,274 +1,186 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
 
-	<title>
-		Housing project
-	</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <!-- Ensures the page displays properly for the device being used -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Housing Project</title>
 
-    <!-- Favicon -->
-    <!--link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" /-->
-
-    <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="/css/button.css" />
-	<link rel="stylesheet" type="text/css" href="/css/tooltip.css" />
-	<link rel="stylesheet" type="text/css" href="/css/form-control-feedback.css" />
-	<link rel="stylesheet" type="text/css" href="/css/tile.css" />
-	<link rel="stylesheet" type="text/css" href="/css/grid-view.css" />
-	<link rel="stylesheet" type="text/css" href="/css/modal-dialog.css" />
-	<link rel="stylesheet" type="text/css" href="/css/text-responsive.css" />
-	<link rel="stylesheet" type="text/css" href="/css/margin-responsive.css" />
-
-    <!-- Google Fonts -->    
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css" />
-	<link href="//fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet" type="text/css" />
-	<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css" />     
-
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script type="text/javascript" src="Bootstrap/Twitter/js/response.min.js"></script>
-    <![endif]-->
-
-    
-
-    <link rel="stylesheet" type="text/css" href="/css/spotlight.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pricing-plan.css" />
-
-    <link rel="stylesheet" type="text/css" href="/css/listing-repeater.css" />
-    <link rel="stylesheet" type="text/css" href="/css/listing-summary-view.css" />
-    <link rel="stylesheet" type="text/css" href="/css/listing-list-view.css" />
-    <link rel="stylesheet" type="text/css" href="/css/listing-grid-view.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pager.css" />
-
-	@yield('extra-styles')
-
-	<!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/reality-icon.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootsnav.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/cubeportfolio.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/jquery.fancybox.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/owl.transitions.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/settings.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/range-Slider.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/search.css">
 
 </head>
 
 <body>
 
-    <div id="wrapper">
+	<!--Header-->
+	<header class="layout_default">
+	  
+	  <div class="header-upper">
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-3 col-sm-12">
+		      <div class="logo">
+				<a href="index5.html">
+					<img title="Homestate" alt="" src="/assets/images/logo.png">
+				</a>
+			  </div>
+		    </div>
+		    <!--Info Box-->
+		    <div class="col-md-9 col-sm-12 right">
+		      <div class="info-box first">
+		        <div class="icons"><i class="fa fa-phone"></i></div>
+		        <ul>
+		          <li><strong>Phone Number</strong></li>
+		          <li>+1 900 234 567 - 68</li>
+		        </ul>
+		      </div>
+		      <div class="info-box">
+		        <div class="icons"><i class="fa fa-building"></i></div>
+		        <ul>
+		          <li><strong>Manhattan Hall,</strong></li>
+		          <li>Castle Melbourne, australia</li>
+		        </ul>
+		      </div>
+		      <div class="info-box">
+		        <div class="icons"><i class="fa fa-envelope"></i></div>
+		        <ul>
+		          <li><strong>Email Address</strong></li>
+		          <li><a href="javascript:void(0)">info@realtyhomes.com</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	  </div>
+	  <nav class="navbar navbar-default navbar-sticky bootsnav">
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-12">
+		      <div class="attr-nav">
+		        <ul class="social_share clearfix">
+		          <li><a href="javascript:void(0)" class="facebook"><i class="fa fa-facebook"></i></a></li>
+		          <li><a href="javascript:void(0)" class="twitter"><i class="fa fa-twitter"></i></a></li>
+		          <li><a class="google" href="javascript:void(0)"><i class="fa fa-google"></i></a></li>
+		        </ul>
+		      </div>
+		      <!-- Start Header Navigation -->
+		      <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+		        <i class="fa fa-bars"></i>
+		        </button>
+		        <a class="navbar-brand sticky_logo" href="index5.html"><img src="/assets/images/logo-white.png" class="logo" alt=""></a>
+		      </div> <!-- End Header Navigation -->
+		      <div class="collapse navbar-collapse" id="navbar-menu">
+		        <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
+				  <li><a href="/">Home</a></li>
+		          <li><a href="/listing">Listings</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	  </nav>
+	</header>
+	<!--Header Ends-->
 
-		<nav class="navbar header-navbar">                            
+	@yield('content')
 
-            <a href="/" target="_blank">
-                <img src="/images/logo.png" class="fanshawe-brand" />
-            </a>                 
+	<!--Footer-->
+	<footer class="padding_top footer2">
+	  <div class="container">
+		<div class="row">
+		  
+		  
+		  <div class="col-md-6 col-sm-6">
+		    <div class="footer_panel bottom30">
+		      <h4 class="bottom30">Latest News</h4>
+		      <div class="media">
+		        <a class="media-object"><img src="/assets/images/footer-news1.png" alt="news"></a>
+		        <div class="media-body">
+		          <a href="#.">Nearest mall in high tech Goes your villa</a>
+		          <span><i class="fa fa-clock-o"></i>Feb 22, 2017</span>
+		        </div>
+		      </div>
+		      <div class="media">
+		        <a class="media-object"><img src="/assets/images/footer-news1.png" alt="news"></a>
+		        <div class="media-body">
+		          <a href="#.">Nearest mall in high tech Goes your villa</a>
+		          <span><i class="fa fa-clock-o"></i>Feb 22, 2017</span>
+		        </div>
+		      </div>
+		      <div class="media">
+		        <a class="media-object"><img src="/assets/images/footer-news1.png" alt="news"></a>
+		        <div class="media-body">
+		          <a href="#.">Nearest mall in high tech Goes your villa</a>
+		          <span><i class="fa fa-clock-o"></i>Feb 22, 2017</span>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-md-6 col-sm-6">
+		    <div class="footer_panel bottom30">
+		      <h4 class="bottom30">Get in Touch</h4>
+		      <ul class="getin_touch">
+		        <li><i class="fa fa-phone"></i>01 900 234 567 - 68</li>
+		        <li><a href="javascript:void(0)"><i class="fa fa-envelope"></i>info@realtyhomes.com</a></li>
+		        <li><a href="javascript:void(0)"><i class="fa fa-arrow-right"></i>www.realtyhomes.com</a></li>
+		        <li><i class="fa fa-building"></i>Advisor Melbourne, Merrick Way,FL 12345 australia</li>
+		      </ul>
+		    </div>
+		  </div>
+		</div>
+	  </div>
+	</footer>
+	<!--CopyRight-->
+	<div class="copyright index2">
+	  <div class="copyright_inner">
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-7">
+		      <p>Copyright &copy; 2017 <span>Housing Project</span>. All rights reserved.</p>
+		    </div>
+		    
+		  </div>
+		</div>
+	  </div>
+	</div>
 
-            <div class="container">
-
-                <ul class="nav login-status">
-
-                    
-
-                </ul>                
-
-            </div>                        
-        </nav>
-
-        <!-- Navigation -->
-        <nav id="Navbar" class="navbar navbar-inverse main-navbar" role="navigation">                                                                                                                                                                                                                
-
-            <a id="NavbarHousingLogo" href="/">
-                <img src="/images/navbar-logo.png" class="pull-left" style="height: 80px; margin-top: -30px; margin-left: 10px;" />
-            </a>    
-                        
-            <img src="/images/cityscape.png" class="cityscape hidden-xs" />
-
-            <div id="NavbarContainer" class="container">                                                                
-
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-links">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>                           
-                </div>
-
-                <!-- Top Menu Items -->
-                <div class="collapse navbar-collapse" id="navbar-links">                                                            
-
-                    <ul class="nav navbar-right navbar-nav nav-main">
-
-                        <li>
-                            <a href="/listing">Search Listings</a>
-                        </li>
-
-                        
-                        <li class="dropdown">                            
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Landlords
-                                <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-							@if (\Auth::user())
-								<li>
-									<a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-								</li>
-							@else
-                                <li><a href="/login">Sign in</a></li>
-                                <li><a href="/register">Create an account</a></li>
-							@endif
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/login">Admin&nbsp;<i class="fa fa-cogs text-muted"></i></a>
-                        </li>
-                                               
-                        
-                    </ul>                                      
-
-                </div>                    
-
-            </div>                                    
-
-        </nav>
-        <!-- //End Navigation -->                      
-
-        <div id="page-wrapper">
-
-			@yield('content')
-
-        </div>
-
-    </div>         
-    
-    <footer id="footer">
-
-        <div id="footer-nav">
-
-            <div class="container">
-
-                <div class="row">
-                    
-                    <div class="col-xs-12 col-sm-4">
-                        <h4>Landlords</h4>
-                        <ul class="nav">
-						@if (\Auth::user())
-							<li>
-								<a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-							</li>
-						@else
-                            <li><a href="/login">Sign in</a></li>
-                            <li><a href="/register">Create an account</a></li>
-						@endif
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <h4>Contact Us</h4>
-                        <p class="small">
-                            <b>Housing Project</b><br />
-                            Room F1002<br />
-                            <a href="mailto: abc@xyz.com">abc@xyz.com</a><br />
-                            123-456-7890
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div id="footer-disclaimer">
-
-            <div class="container">
-
-                <p class="small">
-                    <b>Disclaimer (to landlords):</b>
-                    <br />
-                    This website is the property of Fanshawe College. The listing service exists for the sole benefit of the students of Fanshawe College who may be 
-                    searching for rental premises. Fanshawe College therefore reserves the right to list any property, or to delete listings of properties, on whatever 
-                    grounds it deems appropriate. Such grounds may include, but are not limited to Fanshawe College having reason to conclude that listing such 
-                    property has been or may be detrimental or harmful to the College or its students.
-                </p>             
-
-                <p class="small">
-                    <b>Disclaimer (to students):</b>
-                    <br />
-                    The listings on this website have not been inspected by Fanshawe College nor have any steps been taken to confirm the accuracy of the 
-                    information provided. Listings provided on this site are solely for the use by Fanshawe students/staff/faculty and the fact that they 
-                    appear on this website, should not be considered as a recommendation or endorsement by Fanshawe College. Fanshawe assumes no responsibility 
-                    in respect to the condition of any premise listed or any other matter related to the leasing of the listing. Furthermore, Fanshawe College 
-                    disclaims responsibility for any harm resulting from accessing or downloading information on this website. 
-                    It is the responsibility of the student/staff/faculty to contact the landlord directly and Fanshawe highly recommends an on-site inspection 
-                    of the property. I.e. DO NOT rent a place sight unseen.  Tenants are encouraged to investigate all aspects of the property including fire safety, 
-                    roommate agreements, lease requirements, City rental license requirements, insurance, etc.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div id="footer-copyright">
-
-            <div class="container">
-                <b class="small">&copy; Housing project 2017</b></p>                
-            </div>         
-
-        </div>
-
-    </footer>        
-    
-    <!-- Error Modal -->     
-    <div id="global-error-modal" class="modal modal-danger">        
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content"> 
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <i class="fa fa-times-circle"></i>&nbsp;Error
-                </div>               
-                <div class="modal-body"> 
-                    <p class="lead">An error occurred while processing your request.</p>                                                          
-                    <p>Please retry your last action. If the problem persists, please contact a system administrator.</p>  
-                    <div class="debug-info"></div>                                        
-                </div> 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                    
-                </div>               
-            </div>
-        </div>
-    </div>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery-2.1.4.js"></script> 
+	<script src="/assets/js/bootstrap.min.js"></script> 
+	<script src="/assets/js/bootsnav.js"></script>
+	<script src="/assets/js/jquery.parallax-1.1.3.js"></script>
+	<script src="/assets/js/jquery.appear.js"></script>
+	<script src="/assets/js/jquery-countTo.js"></script>
+	<script src="/assets/js/masonry.pkgd.min.js"></script>
+	<script src="/assets/js/jquery.cubeportfolio.min.js"></script>
+	<script src="/assets/js/range-Slider.min.js"></script>
+	<script src="/assets/js/owl.carousel.min.js"></script> 
+	<script src="/assets/js/selectbox-0.2.min.js"></script>
+	<script src="/assets/js/zelect.js"></script>
+	<script src="/assets/js/jquery.fancybox.js"></script>
+	<script src="/assets/js/jquery.themepunch.tools.min.js"></script>
+	<script src="/assets/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="/assets/js/revolution.extension.layeranimation.min.js"></script>
+	<script src="/assets/js/revolution.extension.navigation.min.js"></script>
+	<script src="/assets/js/revolution.extension.parallax.min.js"></script>
+	<script src="/assets/js/revolution.extension.slideanims.min.js"></script>
+	<script src="/assets/js/revolution.extension.video.min.js"></script>
+	<script src="/assets/js/functions.js"></script>
+	<script src="/assets/js/custom.js"></script>
 
 	@yield('extra-scripts')
 
