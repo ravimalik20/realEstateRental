@@ -1,0 +1,86 @@
+﻿.spotlight
+{
+    padding: 15px 0;    
+}
+
+.spotlight h3
+{
+    margin-top: 0;
+}
+
+.spotlight .divider
+{
+    width: 2px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+}
+
+.spotlight-item
+{
+    padding: 15px 40px;    
+}
+
+.spotlight .divider.right
+{
+    right: 1px;
+}
+
+.spotlight .divider.left
+{
+    left: 1px;
+}
+
+/* Default Spotlight */
+.spotlight-default
+{
+    border-top: 1px solid #ddd;
+    background-color: #f0f0f0;   
+    border-bottom: 1px solid #ddd;
+}
+
+.spotlight-default h3
+{
+    color: #000;
+}
+
+.spotlight-default p
+{
+    color: #555;
+}
+
+.spotlight-default .divider
+{
+    border-right: 1px solid rgba(0,0,0,.1);
+    border-left: 1px solid rgba(255,255,255,1);
+}
+
+/* Inverted Spotlight */
+.spotlight-inverted .spotlight
+{
+    background-color: #222;
+    background-image: linear-gradient(to bottom, #333, #222);
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.spotlight-inverted h3
+{
+    color: #f0f0f0;    
+}
+
+.spotlight-inverted p
+{
+    color: #bbb;
+}
+
+.spotlight-inverted h3, .spotlight-inverted p
+{
+    text-shadow: 0 0 4px #000;
+}
+
+.spotlight-inverted .divider
+{
+    border-right: 1px solid rgba(255,255,255,.15);
+    border-left: 1px solid rgba(0,0,0,.85);
+}

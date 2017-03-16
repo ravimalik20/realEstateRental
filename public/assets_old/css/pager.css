@@ -1,0 +1,37 @@
+﻿.pager
+{    
+    display: inline; 
+    margin-top: 0;
+    margin-bottom: 0;        
+}
+
+.pager > .control, .pager > .page-status
+{
+    float: left;    
+    display: block;        
+}
+
+.pager > .control
+{          
+    color: #fff; 
+}
+
+.pager > .control:hover
+{   
+}
+
+.pager > .control.previous
+{  
+    border-left: 1px solid #444;  
+}
+
+.pager > .control.next
+{        
+}
+
+.pager > .page-status
+{      
+    background-color: #444;
+    color: #fff;  
+    width: 200px;    
+}

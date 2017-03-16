@@ -1,0 +1,55 @@
+﻿
+.form-control
+{
+    display: inline-block;
+}
+
+.has-feedback .form-control-feedback
+{            
+    top: 0;
+    right: 0 !important;       
+    cursor: default;
+    z-index: 3;    
+}
+
+.validation-tooltip-container
+{
+    position: relative;      
+}
+
+.form-inline > .validation-tooltip-container
+{ 
+    float: left;
+    margin-right: 4px;
+}
+
+.input-group .validation-tooltip-container:first-child > .form-control
+{
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.input-group .validation-tooltip-container:not(:first-child) > .form-control
+{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group .validation-tooltip-container:last-child > .form-control
+{
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.validation-tooltip-container select + .form-control-feedback
+{
+    right: -30px !important;
+}
+
+.validation-message
+{
+    display: block;
+    margin-top: 6px;
+    margin-left: 4px;
+    font-size: 85%;
+}

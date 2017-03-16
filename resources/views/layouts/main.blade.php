@@ -22,6 +22,8 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/range-Slider.min.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/search.css">
 
+	@yield('extra-styles')
+
 </head>
 
 <body>
@@ -34,8 +36,8 @@
 		  <div class="row">
 		    <div class="col-md-3 col-sm-12">
 		      <div class="logo">
-				<a href="index5.html">
-					<img title="Homestate" alt="" src="/assets/images/logo.png">
+				<a href="/">
+					<i class="fa fa-home fa-3x"></i> <span class="fa-2x">Housing</span>
 				</a>
 			  </div>
 		    </div>
@@ -82,7 +84,9 @@
 		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 		        <i class="fa fa-bars"></i>
 		        </button>
-		        <a class="navbar-brand sticky_logo" href="index5.html"><img src="/assets/images/logo-white.png" class="logo" alt=""></a>
+		        <a class="navbar-brand sticky_logo" href="/" style="color:white;">
+					<i class="fa fa-home fa-2x"></i> <span class="fa-1x">Housing</span>
+				</a>
 		      </div> <!-- End Header Navigation -->
 		      <div class="collapse navbar-collapse" id="navbar-menu">
 		        <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">

@@ -1,0 +1,125 @@
+﻿
+.listing-summary-item
+{
+    border-color: #ccc;
+}
+
+.listing-summary-item h1.price
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+}
+
+.listing-summary-item.rejected
+{    
+}
+
+.listing-summary-item .badge
+{    
+    border-radius: 4px;
+}
+
+.status-popover
+{    
+    max-width: 350px;
+}
+
+.status-popover .popover-title
+{
+    color: #fff;
+}
+
+.status-popover .popover-content
+{
+    color: #555;
+}
+
+.listing-summary-item .status-badge
+{
+    cursor: pointer;
+}
+
+.popover.inactive .popover-title,
+.listing-summary-item .badge.inactive, 
+.listing-summary-item .badge.no-views,
+.listing-summary-item .badge.expired
+{
+    background-color: #777;
+}
+
+.popover.rejected .popover-title,
+.listing-summary-item .badge.rejected
+{
+    background-color: #c34646;
+}
+
+.popover.posted .popover-title,
+.listing-summary-item .badge.posted, 
+.listing-summary-item .badge.has-views,
+.listing-summary-item .badge.not-expired
+{
+    background-color: #7e811b;
+}
+
+.popover.rented .popover-title,
+.listing-summary-item .badge.rented
+{
+    background-color: #864a93;
+}
+
+.popover.submitted .popover-title,
+.listing-summary-item .badge.submitted
+{
+    background-color: #3981ad;
+}
+
+.popover.expiry-warning .popover-title,
+.listing-summary-item .badge.expiry-warning
+{
+    background-color: #b6953d;
+}
+
+.listing-summary-item .address
+{
+    color: #195d69;    
+}
+
+.listing-summary-item .cover-photo-container
+{    
+    display: block;        
+    width: 100%;
+    padding-bottom: 75%;   
+    position: relative; 
+}
+
+.listing-summary-item .cover-photo
+{
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.listing-summary-item .default-cover-photo:hover
+{
+    text-decoration: none;
+}
+
+.listing-summary-item .default-cover-photo i
+{
+    color: #f0f0f0;
+    font-size: 100px;
+}
+
+.listing-summary-item .default-cover-photo p
+{
+    color: #fff;  
+    font-size: 12px; 
+}
