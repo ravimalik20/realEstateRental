@@ -3,7 +3,7 @@
 <div class="col-sm-6">
 	<div class="property_item heading_space">
 	  <div class="image">
-		<a href="#."><img src="/assets/images/listing1.jpg" alt="latest property" class="img-responsive"></a>
+		<a href="/listing/1"><img src="/assets/images/listing1.jpg" alt="latest property" class="img-responsive"></a>
 		<div class="price clearfix"> 
 		  <span class="tag pull-right">$8,600 Per Month</span>
 		</div>
@@ -12,7 +12,7 @@
 	  </div>
 	  <div class="proerty_content">
 		<div class="proerty_text">
-		  <h3 class="captlize"><a href="#.">Historic Town House</a></h3>
+		  <h3 class="captlize"><a href="/listing/1">Historic Town House</a></h3>
 		  <p>45 Regent Street, London, UK</p>
 		</div>
 		<div class="property_meta transparent"> 
