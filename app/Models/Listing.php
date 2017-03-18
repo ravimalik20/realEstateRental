@@ -49,4 +49,61 @@ class Listing extends Model
 	{
 		return $this->belongsToMany(Restrictions::class, 'listing_restrictions', 'listing_id', 'restriction_id');
 	}
+
+	public function photos()
+	{
+		return $this->hasMany(ListingPhoto::class, 'listing_id', 'id');
+	}
+
+	public function thumbnail()
+	{
+		$image = $this->photos()->orderBy("created_at")->first();
+
+		if (!$image)
+			return '/assets/images/best-deal1.jpg';
+		else
+			return $image->path;
+	}
+
+	public static function make($request)
+	{
+		$data = $request->all();
+
+		//dd($data);
+
+		$data["user_id"] = \Auth::user()->id;
+		$data["lat"] = 0.0;
+		$data["lng"] = 0.0;
+
+		$listing = Listing::create($data);
+
+		if (!$listing)
+			return null;
+
+		$amenities_id = $request->amenity;
+		if (count($amenities_id) > 0) foreach ($amenities_id as $id) {
+			ListingAmenity::create([
+				"listing_id" => $listing->id,
+				"amenity_id" => $id
+			]);
+		}
+
+		$restrictions_id = $request->restriction;
+		if (count($restrictions_id) > 0) foreach ($restrictions_id as $id) {
+			ListingRestriction::create([
+				"listing_id" => $listing->id,
+				"restriction_id" => $id
+			]);
+		}
+
+		$images = json_decode($request->images);
+		if (count($images) > 0) foreach ($images as $image) {
+			ListingPhoto::create([
+				"listing_id" => $listing->id,
+				"path" => $image
+			]);
+		}
+
+		return $listing;
+	}
 }

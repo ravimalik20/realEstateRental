@@ -9,8 +9,12 @@ use App\Models\HousingType;
 use App\Models\PriceRange;
 use App\Models\Amenities;
 use App\Models\Restrictions;
+use App\Models\InitialPaymentType;
+use App\Models\Country;
+use App\Models\Listing;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ListingController extends Controller
 {
@@ -40,7 +44,19 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+		$bathrooms = Bathroom::all();
+		$bedrooms = Bedroom::all();
+		$campuses = Campus::all();
+		$housing_types = HousingType::all();
+		$price_ranges = PriceRange::all();
+		$amenities = Amenities::all();
+		$restrictions = Restrictions::all();
+		$initial_payment_type = InitialPaymentType::all();
+		$countries = Country::all();
+
+        return view('listing.create', compact('bathrooms', 'bedrooms', 'campuses',
+			'housing_types', 'price_ranges', 'amenities', 'restrictions',
+			'initial_payment_type', 'countries'));
     }
 
     /**
@@ -51,7 +67,15 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $listing = Listing::make($request);
+
+		if (!$listing) {
+			$request->flash();
+
+			return redirect()->back();
+		}
+
+		return redirect('/home');
     }
 
     /**
@@ -101,6 +125,15 @@ class ListingController extends Controller
 
 	public function search(Request $request)
 	{
-		return view('listing.partials.listing');
+		$listings = Listing::paginate(100);
+
+		return view('listing.partials.listing', compact('listings'));
+	}
+
+	public function uploadImage(Request $request)
+	{
+		$path = $request->file('file')->store('public/uploads', 'local');
+
+        return $path;
 	}
 }

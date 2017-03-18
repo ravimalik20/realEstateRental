@@ -21,6 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/range-Slider.min.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/search.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/jquery.steps.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/dropzone.min.css">
 
 	@yield('extra-styles')
 
@@ -90,8 +92,21 @@
 		      </div> <!-- End Header Navigation -->
 		      <div class="collapse navbar-collapse" id="navbar-menu">
 		        <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
-				  <li><a href="/">Home</a></li>
+				  <li><a
+					@if (\Auth::user())
+						href="/home"
+					@else
+						href="/"
+					@endif
+				  >Home</a></li>
 		          <li><a href="/listing">Listings</a></li>
+				  @if (\Auth::user())
+				  <li><a href="/listing/create">Create Listing</a></li>
+				  <li><a href="/logout">Logout</a></li>
+				  @else
+				  <li><a href="/login">Login</a></li>
+				  <li><a href="/register">Register</a></li>
+				  @endif
 		        </ul>
 		      </div>
 		    </div>
@@ -185,6 +200,9 @@
 	<script src="/assets/js/revolution.extension.video.min.js"></script>
 	<script src="/assets/js/functions.js"></script>
 	<script src="/assets/js/custom.js"></script>
+	<script src="/assets/js/jquery.steps.min.js"></script>
+	<script src="/assets/js/jquery.validate.min.js"></script>
+	<script src="/assets/js/dropzone.min.js"></script>
 
 	@yield('extra-scripts')
 

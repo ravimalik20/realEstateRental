@@ -24,7 +24,7 @@
   <div class="container">
     <div class="row">
 
-	  <div class="col-lg-4 form-horizontal search-sidebar">
+	  <div class="col-md-4 form-horizontal search-sidebar">
 	     <div class="search-heading clearfix">
 	        <div class="pull-left">
 	           <span>Search Filter</span>        
@@ -323,17 +323,12 @@
           </div>
         </div>
 
-        <div id="listing-area" class="row">
-          	<!-- Listings are populated here. -->
-        </div>
+		<div class="row">
+			<div class="col-lg-12" id="listing-area">
+
+			</div>
+		</div>
         
-        <div class="padding_bottom text-center">
-          <ul class="pager">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-          </ul>
-        </div>
       </div>
       
     </div>

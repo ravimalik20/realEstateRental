@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/listing/search', 'ListingController@search');
+Route::post('/listing/image/upload', 'ListingController@uploadImage');
 Route::resource('listing', 'ListingController');
 
 ?>
