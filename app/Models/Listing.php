@@ -69,8 +69,6 @@ class Listing extends Model
 	{
 		$data = $request->all();
 
-		//dd($data);
-
 		$data["user_id"] = \Auth::user()->id;
 		$data["lat"] = 0.0;
 		$data["lng"] = 0.0;

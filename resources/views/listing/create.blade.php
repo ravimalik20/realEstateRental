@@ -41,7 +41,7 @@
 					<h3>Geographic</h3>
 					<fieldset>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="email">Campus *</label>
+							<label class="control-label col-sm-2" for="email">Campus</label>
 							<div class="col-sm-10">
 							  <select class="form-control" name="campus_id" required>
 								  @if (isset($campuses) && count($campuses) > 0)
@@ -57,9 +57,9 @@
 							</div>
 						  </div>
 						  <div class="form-group">
-							<label class="control-label col-sm-2" for="pwd">Location:</label>
+							<label class="control-label col-sm-2" for="pwd">Location</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" name="campus" required >
+								<input type="text" class="form-control" name="location" required >
 							</div>  
 						  </div>
 						  <div class="form-group">
@@ -113,7 +113,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2">Accomodation Type:</label>
 							<div class="col-sm-10">
-							  <select class="form-control" name="housing_type_id"  >
+							  <select class="form-control" name="housing_type_id" required >
 								  @if (isset($housing_types) && count($housing_types) > 0)
 								@foreach ($housing_types as $type)
 									<option value="{{$type->id}}"
@@ -129,49 +129,49 @@
 						  <div class="form-group">
 							<label class="control-label col-sm-2">Date Available:</label>
 							<div class="col-sm-10">
-								<input type="date" class="form-control datetime" name="date_available">
+								<input type="date" class="form-control datetime" name="date_available" required>
 							</div>  
 						  </div>
 						  <div class="form-group">
 							<label class="control-label col-sm-2">Num. of bedrooms</label>
 							<div class="col-sm-10">
-								<input type="number" class="form-control" name="num_bedrooms">
+								<input type="number" class="form-control" name="num_bedrooms" required>
 							</div>  
 						  </div>
 						  <div class="form-group">
-							<label class="control-label col-sm-2">Num. of bathrooms:</label>
+							<label class="control-label col-sm-2">Num. of bathrooms</label>
 							<div class="col-sm-10">
-								<input type="number" class="form-control" name="num_bathrooms">
+								<input type="number" class="form-control" name="num_bathrooms" required>
 							</div>  
 						  </div>
 						  <div class="form-group">
-							<label class="control-label col-sm-2">Max. tenants:</label>
+							<label class="control-label col-sm-2">Max. tenants</label>
 							<div class="col-sm-10">
-								<input type="number" class="form-control" name="max_tenants">
+								<input type="number" class="form-control" name="max_tenants" required>
 							</div>  
 						  </div>
 						  <div class="form-group">
-							<label class="control-label col-sm-2">Num. parking spots:</label>
+							<label class="control-label col-sm-2">Num. parking spots</label>
 							<div class="col-sm-10">
-								<input type="number" class="form-control" name="num_parking" >
+								<input type="number" class="form-control" name="num_parking" required>
 							</div>  
 						  </div>
 						  <div class="form-group">
-							<label class="control-label col-sm-2">License Number:</label>
+							<label class="control-label col-sm-2">License Number</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" name="license_number">
 							</div>  
 						  </div>
 						  <div class="form-group">
-							<label class="control-label col-sm-2">Rent:</label>
+							<label class="control-label col-sm-2">Rent</label>
 							<div class="col-sm-10">
-								<input type="number" class="form-control" name="rent" >
+								<input type="number" class="form-control" name="rent" required>
 							</div>  
 						  </div>
 						  <div class="form-group">
-							<label class="control-label col-sm-2">Intl. paym. type:</label>
+							<label class="control-label col-sm-2">Intl. paym. type</label>
 							<div class="col-sm-10">
-							  <select class="form-control" name="initial_payment_type_id" >
+							  <select class="form-control" name="initial_payment_type_id" required>
 								  @if (isset($initial_payment_type) && count($initial_payment_type) > 0)
 								@foreach ($initial_payment_type as $type)
 									<option value="{{$type->id}}">{{$type->name}}</option>

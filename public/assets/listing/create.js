@@ -27,11 +27,9 @@ $(document).ready(function () {
 		        form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
 		    }
 
-		    //form.validate().settings.ignore = ":disabled,:hidden";
+		    form.validate().settings.ignore = ":disabled,:hidden";
 
-		    //return form.valid();
-
-			return true;
+		    return form.valid();
 		},
 		onStepChanged: function (event, currentIndex, priorIndex)
 		{

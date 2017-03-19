@@ -86,7 +86,9 @@ class ListingController extends Controller
      */
     public function show($id)
     {
-        return view('listing.show');
+		$listing = Listing::findOrFail($id);
+
+        return view('listing.show', compact('listing'));
     }
 
     /**
@@ -125,7 +127,9 @@ class ListingController extends Controller
 
 	public function search(Request $request)
 	{
-		$listings = Listing::paginate(100);
+		$user = \App\User::find(\Auth::user()->id);
+
+		$listings = $user->listings()->paginate(10);
 
 		return view('listing.partials.listing', compact('listings'));
 	}
