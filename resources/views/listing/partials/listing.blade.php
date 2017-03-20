@@ -26,17 +26,13 @@
 			<div class="favroute clearfix">
 			  <p class="pull-md-left">{{$listing->created_at->format("M,d Y")}}; <i class="icon-calendar2"></i></p>
 			  <ul class="pull-right">
-				<li><a href="#."><i class="icon-like"></i></a></li>
+				@if (\Auth::user() && $listing->user_id == \Auth::user()->id)
+				<li><a href="/listing/{{$listing->id}}/edit" title="Edit"><i class="fa fa-edit"></i></a></li>
+				@endif
 				<li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
 			  </ul>
 			</div>
-			<div class="toggle_share collapse" id="one">
-			  <ul>
-				<li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
-				<li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
-				<li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
-			  </ul>
-			</div>
+			
 		  </div>
 		</div>
 	</div>

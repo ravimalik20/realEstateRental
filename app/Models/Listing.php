@@ -68,16 +68,37 @@ class Listing extends Model
 
 	public static function make($request)
 	{
+		$listing = self::saveUpdate($request);
+
+		return $listing;
+	}
+
+	public static function updateObj($listing, $request)
+	{
+		return self::saveUpdate($request, $listing);
+	}
+
+	public static function saveUpdate($request, $listing=null)
+	{
 		$data = $request->all();
 
 		$data["user_id"] = \Auth::user()->id;
 		$data["lat"] = 0.0;
 		$data["lng"] = 0.0;
 
-		$listing = Listing::create($data);
+		if ($listing) {
+			$listing->update($data);
+		}
+		else {
+			$listing = Listing::create($data);
+		}
 
 		if (!$listing)
 			return null;
+
+		if (count($listing->amenities) > 0) {
+			ListingAmenity::where("listing_id", $listing->id)->delete();
+		}
 
 		$amenities_id = $request->amenity;
 		if (count($amenities_id) > 0) foreach ($amenities_id as $id) {
@@ -85,6 +106,10 @@ class Listing extends Model
 				"listing_id" => $listing->id,
 				"amenity_id" => $id
 			]);
+		}
+
+		if (count($listing->restrictions) > 0) {
+			ListingRestriction::where("listing_id", $listing->id)->delete();
 		}
 
 		$restrictions_id = $request->restriction;

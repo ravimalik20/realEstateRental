@@ -103,7 +103,31 @@ class ListingController extends Controller
      */
     public function edit($id)
     {
-        //
+		$listing = Listing::findOrFail($id);
+
+        $bathrooms = Bathroom::all();
+		$bedrooms = Bedroom::all();
+		$campuses = Campus::all();
+		$housing_types = HousingType::all();
+		$price_ranges = PriceRange::all();
+		$amenities = Amenities::all();
+		$restrictions = Restrictions::all();
+		$initial_payment_type = InitialPaymentType::all();
+		$countries = Country::all();
+		$programs = Program::all();
+
+		$amenity_ids = $listing->amenities->map(function ($obj) {
+			return $obj->id;
+		})->toArray();
+
+		$restriction_ids = $listing->restrictions->map(function ($obj) {
+			return $obj->id;
+		})->toArray();
+
+        return view('listing.create', compact('bathrooms', 'bedrooms', 'campuses',
+			'housing_types', 'price_ranges', 'amenities', 'restrictions',
+			'initial_payment_type', 'countries', 'programs', 'listing',
+			'amenity_ids', 'restriction_ids'));
     }
 
     /**
@@ -115,7 +139,10 @@ class ListingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $listing = Listing::findOrFail($id);
+		$listing = Listing::updateObj($listing, $request);
+
+		return redirect('/listing');
     }
 
     /**
