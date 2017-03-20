@@ -46,11 +46,5 @@
 
 </div>
 
-@if (isset($listings) && count($listings) > 0)
-<div class="row">
-	<div class="padding_bottom text-center">
-	  {!! $listings->render() !!}
-	</div>
-</div>
-@endif
+
 
