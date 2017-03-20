@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
 		$this->call(\RestrictionsSeeder::class);
 		$this->call(\CountrySeeder::class);
 		$this->call(\InitialPaymentTypeSeeder::class);
+		$this->call(\ProgramSeeder::class);
     }
 }

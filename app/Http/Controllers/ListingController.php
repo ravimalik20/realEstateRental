@@ -12,6 +12,7 @@ use App\Models\Restrictions;
 use App\Models\InitialPaymentType;
 use App\Models\Country;
 use App\Models\Listing;
+use App\Models\Program;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -32,9 +33,11 @@ class ListingController extends Controller
 		$price_ranges = PriceRange::all();
 		$amenities = Amenities::all();
 		$restrictions = Restrictions::all();
+		$programs = Program::all();
 
         return view('listing.index', compact('bathrooms', 'bedrooms', 'campuses',
-			'housing_types', 'price_ranges', 'amenities', 'restrictions'));
+			'housing_types', 'price_ranges', 'amenities', 'restrictions',
+			'programs'));
     }
 
     /**
@@ -53,10 +56,11 @@ class ListingController extends Controller
 		$restrictions = Restrictions::all();
 		$initial_payment_type = InitialPaymentType::all();
 		$countries = Country::all();
+		$programs = Program::all();
 
         return view('listing.create', compact('bathrooms', 'bedrooms', 'campuses',
 			'housing_types', 'price_ranges', 'amenities', 'restrictions',
-			'initial_payment_type', 'countries'));
+			'initial_payment_type', 'countries', 'programs'));
     }
 
     /**
@@ -127,9 +131,9 @@ class ListingController extends Controller
 
 	public function search(Request $request)
 	{
-		$user = \App\User::find(\Auth::user()->id);
+		$user_id = $request->user_id ? $request->user_id: null;
 
-		$listings = $user->listings()->paginate(10);
+		$listings = Listing::search($request, $user_id, 10);
 
 		return view('listing.partials.listing', compact('listings'));
 	}

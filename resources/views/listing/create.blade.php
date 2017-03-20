@@ -57,6 +57,18 @@
 							</div>
 						  </div>
 						  <div class="form-group">
+							<label class="control-label col-sm-2" for="email">Program</label>
+							<div class="col-sm-10">
+							  <select class="form-control" name="program_id" required>
+								  @if (isset($programs) && count($programs) > 0)
+								@foreach ($programs as $program)
+									<option value="{{$program->id}}">{{$program->name}}</option>
+								@endforeach
+								@endif
+							  </select>
+							</div>
+						  </div>
+						  <div class="form-group">
 							<label class="control-label col-sm-2" for="pwd">Location</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" name="location" required >

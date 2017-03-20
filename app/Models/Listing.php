@@ -12,7 +12,8 @@ class Listing extends Model
 		"postal_code", "country_id", "lat", "lng", "distance", "date_available",
 		"num_bedrooms", "num_bathrooms", "max_tenants", "num_parking",
 		"license_number", "rent", "housing_type_id", "lease_required",
-		"utilities_required", "initial_payment_type_id", "website", "description"
+		"utilities_required", "initial_payment_type_id", "website", "description",
+		"program_id"
 	];
 
 	public function user()
@@ -103,5 +104,73 @@ class Listing extends Model
 		}
 
 		return $listing;
+	}
+
+	public static function search($request, $user_id=null, $paginate=null)
+	{
+		$listings = Listing::select("listing.*")
+			->leftJoin('listing_amenities', 'listing_amenities.listing_id', '=',
+				'listing.id')
+			->leftJoin('listing_restrictions', 'listing_restrictions.listing_id',
+				'=', 'listing.id');
+
+		if ($user_id) {
+			$listings = $listings->where("user_id", $user_id);
+		}
+
+		if ($request->has('campus') && $request->campus) {
+			$listings = $listings->where('campus_id', $request->campus);
+		}
+
+		if ($request->has('program') && $request->program) {
+			$listings = $listings->where('program_id', $request->program);
+		}
+
+		if ($request->has('housing_type') && $request->housing_type) {
+			$listings = $listings->where('housing_type_id', $request->housing_type);
+		}
+
+		if ($request->has('price_range_min') && $request->price_range_min) {
+			$listings = $listings->where('rent', '>=', $request->price_range_min);
+		}
+
+		if ($request->has('price_range_max') && $request->price_range_max) {
+			$listings = $listings->where('rent', '<=', $request->price_range_max);
+		}
+
+		if ($request->has('bedroom') && $request->bedroom) {
+			$comparing_method = (strpos($request->bedroom, '+') > 0) ? '>' : '=';
+
+			$listings = $listings->where('num_bedrooms', $comparing_method, $request->bedroom);
+		}
+
+		if ($request->has('bathroom') && $request->bathroom) {
+			$comparing_method = (strpos($request->bathroom, '+') > 0) ? '>' : '=';
+
+			$listings = $listings->where('num_bathrooms', $comparing_method, $request->bathroom);
+		}
+
+		if ($request->has('distance_from') && $request->distance_from) {
+			$listings = $listings->where('distance', '>=', $request->distance_from);
+		}
+
+		if ($request->has('distance_to') && $request->distance_to) {
+			$listings = $listings->where('distance', '<=', $request->distance_to);
+		}
+
+		if ($request->has('amenity') && count($request->amenity) > 0) {
+			$listings = $listings->whereIn('amenity_id', $request->amenity);
+		}
+
+		if ($request->has('restriction') && count($request->restriction) > 0) {
+			$listings = $listings->whereIn('restriction_id', $request->restriction);
+		}
+
+		if ($paginate)
+			$listings = $listings->distinct()->paginate($paginate);
+		else
+			$listings = $listings->distinct()->get();
+
+		return $listings;
 	}
 }
