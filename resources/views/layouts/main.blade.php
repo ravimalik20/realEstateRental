@@ -102,7 +102,17 @@
 		          <li><a href="/listing">Listings</a></li>
 				  @if (\Auth::user())
 				  <li><a href="/listing/create">Create Listing</a></li>
-				  <li><a href="/logout">Logout</a></li>
+				  <li>
+					<a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+				  </li>
 				  @else
 				  <li><a href="/login">Login</a></li>
 				  <li><a href="/register">Register</a></li>
