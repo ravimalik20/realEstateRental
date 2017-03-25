@@ -102,17 +102,23 @@
 		          <li><a href="/listing">Listings</a></li>
 				  @if (\Auth::user())
 				  <li><a href="/listing/create">Create Listing</a></li>
-				  <li>
-					<a href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                        Logout
-                    </a>
+                  <li class="dropdown">
+		              <a href="#." class="dropdown-toggle" data-toggle="dropdown">{{ \Auth::user()->name }}</a>
+		              <ul class="dropdown-menu animated fadeOut" style="display: none; opacity: 1;">
+						  <li><a href="/profile">Profile</a></li>
+		                  <li>
+							<a href="{{ route('logout') }}"
+				                onclick="event.preventDefault();
+				                         document.getElementById('logout-form').submit();">
+				                Logout
+				            </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-				  </li>
+				            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+				                {{ csrf_field() }}
+				            </form>
+						  </li>
+	                  </ul>
+	              </li>
 				  @else
 				  <li><a href="/login">Login</a></li>
 				  <li><a href="/register">Register</a></li>

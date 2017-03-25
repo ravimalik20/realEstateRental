@@ -15,10 +15,14 @@ Route::get('/', 'IndexController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
 Route::get('/listing/search', 'ListingController@search');
 Route::post('/listing/image/upload', 'ListingController@uploadImage');
 Route::resource('listing', 'ListingController');
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('/home', 'HomeController@index');
+
+	Route::resource('profile', 'ProfileController');
+});
 
 ?>

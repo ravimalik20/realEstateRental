@@ -163,7 +163,7 @@
 					<div class="col-sm-4 bottom40">
 						<div class="agent_wrap">
 							<div class="image">
-								<img src="/assets/images/agent-one.jpg" alt="Agents">
+								<img src="{{$listing->user->profile_pic}}" alt="Agents">
 							</div>
 						</div>
 					</div>
@@ -177,12 +177,8 @@
 						<table class="agent_contact table">
 							<tbody>
 								<tr class="bottom10">
-									<td><strong>Phone:</strong></td>
-									<td class="text-right">(+01) 34 56 7890</td>
-								</tr>
-								<tr class="bottom10">
 									<td><strong>Mobile:</strong></td>
-									<td class="text-right">(+033) 34 56 7890</td>
+									<td class="text-right">{{$listing->user->mobile}}</td>
 								</tr>
 								<tr>
 									<td><strong>Email Adress:</strong></td>

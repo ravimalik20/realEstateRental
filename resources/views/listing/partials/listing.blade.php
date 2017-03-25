@@ -29,7 +29,6 @@
 				@if (\Auth::user() && $listing->user_id == \Auth::user()->id)
 				<li><a href="/listing/{{$listing->id}}/edit" title="Edit"><i class="fa fa-edit"></i></a></li>
 				@endif
-				<li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
 			  </ul>
 			</div>
 			
