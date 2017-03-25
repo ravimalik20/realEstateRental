@@ -340,9 +340,9 @@
             <div class="single-query">
               <div class="intro">
                 <select>
-                  <option class="active">Default Order</option>
+                  <option class="active">Newest</option>
                   <option>Price</option>
-                  <option>Created At</option>
+                  <option>Oldest</option>
                 </select>
               </div>
             </div>

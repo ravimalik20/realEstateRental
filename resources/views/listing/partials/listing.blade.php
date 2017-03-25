@@ -15,7 +15,7 @@
 		  <div class="proerty_content">
 			<div class="proerty_text">
 			  <h3 class="captlize"><a href="/listing/{{$listing->id}}">{{explode(',', $listing->address)[0]}}</a></h3>
-			  <p>{{$listing->address}}</p>
+			  <p>{{$listing->housingType->name}}</p>
 			</div>
 			<div class="property_meta transparent"> 
 			  <span><i class="icon-select-an-objecto-tool"></i>{{$listing->max_tenants}} max. tenants</span> 
@@ -24,7 +24,7 @@
 			</div>
 		
 			<div class="favroute clearfix">
-			  <p class="pull-md-left">{{$listing->created_at->format("M,d Y")}}; <i class="icon-calendar2"></i></p>
+			  <p class="pull-md-left">{{$listing->created_at->format("M d, Y")}} <i class="fa fa-calendar"></i></p>
 			  <ul class="pull-right">
 				@if (\Auth::user() && $listing->user_id == \Auth::user()->id)
 				<li><a href="/listing/{{$listing->id}}/edit" title="Edit"><i class="fa fa-edit"></i></a></li>
