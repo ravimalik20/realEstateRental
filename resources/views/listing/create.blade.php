@@ -154,14 +154,14 @@
 								<input type="text" name="location" id="pac-input" style="margin-top: 2%; height: 28px; width: 70%;"/>
 
 								<input type="hidden" name="lat" 
-								@if (isset($listing))
+								@if (isset($listing) && $listing->lat)
 									value="{{$listing->lat}}"
 								@else
 									value="51.531344"
 								@endif
 								/>
 								<input type="hidden" name="lng"
-								@if (isset($listing))
+								@if (isset($listing) && $listing->lng)
 									value="{{$listing->lng}}"
 								@else
 									value="-86.854957"
