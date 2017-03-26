@@ -83,8 +83,6 @@ class Listing extends Model
 		$data = $request->all();
 
 		$data["user_id"] = \Auth::user()->id;
-		$data["lat"] = 0.0;
-		$data["lng"] = 0.0;
 
 		if ($listing) {
 			$listing->update($data);

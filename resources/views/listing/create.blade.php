@@ -23,6 +23,7 @@
 
 @section('extra-scripts')
 
+	<script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}&libraries=places&callback=initialize" async defer></script>
 	<script src="/assets/listing/create.js"></script>
 
 @endsection
@@ -50,112 +51,124 @@
 
 					<h3>Geographic</h3>
 					<fieldset>
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="email">Campus</label>
-							<div class="col-sm-10">
-							  <select class="form-control" name="campus_id" required>
-								  @if (isset($campuses) && count($campuses) > 0)
-								@foreach ($campuses as $campus)
-									<option value="{{$campus->id}}"
-									@if (isset($listing) && $listing->campus_id == $campus->id)
-										selected
-									@endif
-									>{{$campus->name}}</option>
-								@endforeach
-								@endif
-							  </select>
+						<div class="row">
+							<div class="col-lg-6">
+								  <div class="form-group">
+									<label class="control-label col-sm-2" for="email">Campus</label>
+									<div class="col-sm-10">
+									  <select class="form-control" name="campus_id" required>
+										  @if (isset($campuses) && count($campuses) > 0)
+										@foreach ($campuses as $campus)
+											<option value="{{$campus->id}}"
+											@if (isset($listing) && $listing->campus_id == $campus->id)
+												selected
+											@endif
+											>{{$campus->name}}</option>
+										@endforeach
+										@endif
+									  </select>
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label class="control-label col-sm-2" for="email">Program</label>
+									<div class="col-sm-10">
+									  <select class="form-control" name="program_id" required>
+										  @if (isset($programs) && count($programs) > 0)
+										@foreach ($programs as $program)
+											<option value="{{$program->id}}"
+											@if (isset($listing) && $listing->program_id == $program->id)
+												selected
+											@endif
+											>{{$program->name}}</option>
+										@endforeach
+										@endif
+									  </select>
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+									<div class="col-sm-10">
+									  <input type="text" class="form-control" name="address" required
+										@if (isset($listing))
+											value="{{$listing->address}}"
+										@endif
+										>
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">City</label>
+									<div class="col-sm-10">
+									  <input type="text" class="form-control" name="city" required
+										@if (isset($listing))
+											value="{{$listing->city}}"
+										@endif
+										>
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">Province</label>
+									<div class="col-sm-10">
+									  <input type="text" class="form-control" name="province" required
+										@if (isset($listing))
+											value="{{$listing->province}}"
+										@endif
+										>
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">Postal Code</label>
+									<div class="col-sm-10">
+									  <input type="text" class="form-control" name="postal_code" required
+										@if (isset($listing))
+											value="{{$listing->postal_code}}"
+										@endif
+										>
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">Country</label>
+									<div class="col-sm-10">
+									  <select class="form-control" name="country_id" required>
+										  @if (isset($countries) && count($countries) > 0)
+										@foreach ($countries as $country)
+											<option value="{{$country->id}}">{{$country->name}}</option>
+										@endforeach
+										@endif
+									  </select>
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">Distance from Campus</label>
+									<div class="col-sm-10">
+									  <input type="number" class="form-control" name="distance" required
+										@if (isset($listing))
+											value="{{$listing->distance}}"
+										@endif
+										>
+									</div>
+								  </div>
 							</div>
-						  </div>
-						  <div class="form-group">
-							<label class="control-label col-sm-2" for="email">Program</label>
-							<div class="col-sm-10">
-							  <select class="form-control" name="program_id" required>
-								  @if (isset($programs) && count($programs) > 0)
-								@foreach ($programs as $program)
-									<option value="{{$program->id}}"
-									@if (isset($listing) && $listing->program_id == $program->id)
-										selected
-									@endif
-									>{{$program->name}}</option>
-								@endforeach
-								@endif
-							  </select>
-							</div>
-						  </div>
-						  <div class="form-group">
-							<label class="control-label col-sm-2" for="pwd">Location</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="location"
-								@if (isset($listing))
-									value="{{$listing->location}}"
-								@endif
-								>
-							</div>  
-						  </div>
-						  <div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
-							<div class="col-sm-10">
-							  <input type="text" class="form-control" name="address" required
-								@if (isset($listing))
-									value="{{$listing->address}}"
-								@endif
-								>
-							</div>
-						  </div>
-						  <div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">City</label>
-							<div class="col-sm-10">
-							  <input type="text" class="form-control" name="city" required
-								@if (isset($listing))
-									value="{{$listing->city}}"
-								@endif
-								>
-							</div>
-						  </div>
-						  <div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Province</label>
-							<div class="col-sm-10">
-							  <input type="text" class="form-control" name="province" required
-								@if (isset($listing))
-									value="{{$listing->province}}"
-								@endif
-								>
-							</div>
-						  </div>
-						  <div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Postal Code</label>
-							<div class="col-sm-10">
-							  <input type="text" class="form-control" name="postal_code" required
-								@if (isset($listing))
-									value="{{$listing->postal_code}}"
-								@endif
-								>
-							</div>
-						  </div>
-						  <div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Country</label>
-							<div class="col-sm-10">
-							  <select class="form-control" name="country_id" required>
-								  @if (isset($countries) && count($countries) > 0)
-								@foreach ($countries as $country)
-									<option value="{{$country->id}}">{{$country->name}}</option>
-								@endforeach
-								@endif
-							  </select>
-							</div>
-						  </div>
-						  <div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Distance from Campus</label>
-							<div class="col-sm-10">
-							  <input type="number" class="form-control" name="distance" required
-								@if (isset($listing))
-									value="{{$listing->distance}}"
-								@endif
-								>
-							</div>
-						  </div>
 
+							<div class="col-lg-6">
+								<div id="map" style="height:433px !important;"></div>
+								<input type="text" name="location" id="pac-input" style="margin-top: 2%; height: 28px; width: 70%;"/>
 
+								<input type="hidden" name="lat" 
+								@if (isset($listing))
+									value="{{$listing->lat}}"
+								@else
+									value="51.531344"
+								@endif
+								/>
+								<input type="hidden" name="lng"
+								@if (isset($listing))
+									value="{{$listing->lng}}"
+								@else
+									value="-86.854957"
+								@endif
+								/>
+							</div>
+						</div>
 					</fieldset>
 				 
 					<h3>Accomodation Details</h3>
