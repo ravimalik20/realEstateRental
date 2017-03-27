@@ -1,3 +1,17 @@
+function distance(lat1, lon1, lat2, lon2, unit) {
+	var radlat1 = Math.PI * lat1/180
+	var radlat2 = Math.PI * lat2/180
+	var theta = lon1-lon2
+	var radtheta = Math.PI * theta/180
+	var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+	dist = Math.acos(dist)
+	dist = dist * 180/Math.PI
+	dist = dist * 60 * 1.1515
+	if (unit=="K") { dist = dist * 1.609344 }
+	if (unit=="N") { dist = dist * 0.8684 }
+	return dist
+}
+
 function initialize() {
 	var lat = $("input[name=lat]").val();
 	var lng = $("input[name=lng]").val()
@@ -43,6 +57,12 @@ function initialize() {
 
 	var lat = place.geometry.location.lat();
 	var lng = place.geometry.location.lng();
+
+	var lat2 = $("select[name=campus_id]").find(":selected").attr("data-lat");
+	var lng2 = $("select[name=campus_id]").find(":selected").attr("data-lng");
+
+	var dist = distance(lat, lng, lat2, lng2, "K");
+	$("input[name=distance]").val(dist.toFixed(2));
 
 	/* Set map coordinates */
 	$("input[name=lat]").val(lat);

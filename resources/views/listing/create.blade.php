@@ -59,7 +59,7 @@
 									  <select class="form-control" name="campus_id" required>
 										  @if (isset($campuses) && count($campuses) > 0)
 										@foreach ($campuses as $campus)
-											<option value="{{$campus->id}}"
+											<option value="{{$campus->id}}" data-lat="{{$campus->lat}}" data-lng="{{$campus->lng}}"
 											@if (isset($listing) && $listing->campus_id == $campus->id)
 												selected
 											@endif
