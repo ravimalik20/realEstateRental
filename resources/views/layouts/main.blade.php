@@ -100,8 +100,10 @@
 					@endif
 				  >Home</a></li>
 		          <li><a href="/listing">Listings</a></li>
+				  <li><a href="/blog">Blogs</a></li>
 				  @if (\Auth::user())
 				  <li><a href="/listing/create">Create Listing</a></li>
+				  <li><a href="/posts/create">Create Blog</a></li>
                   <li class="dropdown">
 		              <a href="#." class="dropdown-toggle" data-toggle="dropdown">{{ \Auth::user()->name }}</a>
 		              <ul class="dropdown-menu animated fadeOut" style="display: none; opacity: 1;">
@@ -142,28 +144,31 @@
 		  
 		  <div class="col-md-6 col-sm-6">
 		    <div class="footer_panel bottom30">
-		      <h4 class="bottom30">Latest News</h4>
+		      <h4 class="bottom30">Latest Blog Posts</h4>
+
+			  {{--*/
+					$posts = \App\Models\Post::orderBy("created_at", "DESC")->paginate(3);
+			  /*--}}
+
+			  @if(count($posts) > 0)
+			  @foreach ($posts as $post)
 		      <div class="media">
-		        <a class="media-object"><img src="/assets/images/footer-news1.png" alt="news"></a>
+		        <a class="media-object">
+				@if($post->videourl)
+                  <img src="/img/video_placeholder.png" alt="" style="height:52px;width:53px;" />
+                @elseif($post->thumbnail_image)
+                    <img src="/assets/post/images/{{ $post->thumbnail_image }}" alt="" style="height:52px;width:53px;" />
+				@else
+					<img src="/assets/images/blog-1.jpg" alt="" style="height:52px;width:53px;" />
+                @endif
+				</a>
 		        <div class="media-body">
-		          <a href="#.">Nearest mall in high tech Goes your villa</a>
+		          <a href="/blog/{{$post->id}}">{{$post->title}}</a>
 		          <span><i class="fa fa-clock-o"></i>Feb 22, 2017</span>
 		        </div>
 		      </div>
-		      <div class="media">
-		        <a class="media-object"><img src="/assets/images/footer-news1.png" alt="news"></a>
-		        <div class="media-body">
-		          <a href="#.">Nearest mall in high tech Goes your villa</a>
-		          <span><i class="fa fa-clock-o"></i>Feb 22, 2017</span>
-		        </div>
-		      </div>
-		      <div class="media">
-		        <a class="media-object"><img src="/assets/images/footer-news1.png" alt="news"></a>
-		        <div class="media-body">
-		          <a href="#.">Nearest mall in high tech Goes your villa</a>
-		          <span><i class="fa fa-clock-o"></i>Feb 22, 2017</span>
-		        </div>
-		      </div>
+			  @endforeach
+			  @endif
 		    </div>
 		  </div>
 		  <div class="col-md-6 col-sm-6">

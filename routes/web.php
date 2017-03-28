@@ -19,10 +19,19 @@ Route::get('/listing/search', 'ListingController@search');
 Route::post('/listing/image/upload', 'ListingController@uploadImage');
 Route::resource('listing', 'ListingController');
 
+Route::post('post/comment', 'BlogController@addComment');
+Route::resource('blog', 'BlogController');
+
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/home', 'HomeController@index');
 
 	Route::resource('profile', 'ProfileController');
+
+	Route::get('admin/posts/{id}/approve', 'PostController@approvePost');
+	Route::get('admin/posts/{id}/delete', 'PostController@deletePost');
+	Route::get('admin/comment/{id}/delete', 'PostController@deleteComment');
+	Route::resource('posts', 'PostController');
 });
 
 ?>
