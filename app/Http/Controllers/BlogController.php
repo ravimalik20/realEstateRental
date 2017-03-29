@@ -14,7 +14,7 @@ class BlogController extends Controller
     public function index()
     {
 		$data = [];
-		$data['posts'] = Post::orderBy("created_at", "DESC")->paginate(9);
+		$data['posts'] = Post::orderBy("created_at", "DESC")->paginate(4);
 
 		return view('blog', $data);
     }
