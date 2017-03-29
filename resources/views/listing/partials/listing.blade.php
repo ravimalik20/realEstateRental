@@ -28,6 +28,13 @@
 			  <ul class="pull-right">
 				@if (\Auth::user() && $listing->user_id == \Auth::user()->id)
 				<li><a href="/listing/{{$listing->id}}/edit" title="Edit"><i class="fa fa-edit"></i></a></li>
+				<li><a href="#" title="Delete" style="color:red;" class="listing_delete">
+					<i class="fa fa-trash"></i>
+					<form action="/listing/{{$listing->id}}" method="POST">
+						{{csrf_field()}}
+						{{method_field('DELETE')}}
+					</form>
+				</a></li>
 				@endif
 			  </ul>
 			</div>

@@ -13,6 +13,9 @@ use App\Models\InitialPaymentType;
 use App\Models\Country;
 use App\Models\Listing;
 use App\Models\Program;
+use App\Models\ListingAmenity;
+use App\Models\ListingRestriction;
+use App\Models\ListingPhoto;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -153,7 +156,15 @@ class ListingController extends Controller
      */
     public function destroy($id)
     {
-        //
+		$listing = Listing::findOrFail($id);
+
+		ListingAmenity::where("listing_id", $listing->id)->delete();
+		ListingRestriction::where("listing_id", $listing->id)->delete();
+		ListingPhoto::where("listing_id", $listing->id)->delete();
+
+		$listing->delete();
+
+		return back();
     }
 
 	public function search(Request $request)

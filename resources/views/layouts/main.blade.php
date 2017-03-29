@@ -146,12 +146,12 @@
 		    <div class="footer_panel bottom30">
 		      <h4 class="bottom30">Latest Blog Posts</h4>
 
-			  {{--*/
-					$posts = \App\Models\Post::orderBy("created_at", "DESC")->paginate(3);
-			  /*--}}
+			  <?php
+					$blogs = \App\Models\Post::orderBy("created_at", "DESC")->paginate(3);
+			  ?>
 
-			  @if(count($posts) > 0)
-			  @foreach ($posts as $post)
+			  @if(isset($blogs) && count($blogs) > 0)
+			  @foreach ($blogs as $post)
 		      <div class="media">
 		        <a class="media-object">
 				@if($post->videourl)
@@ -224,6 +224,17 @@
 	<script src="/assets/js/jquery.steps.min.js"></script>
 	<script src="/assets/js/jquery.validate.min.js"></script>
 	<script src="/assets/js/dropzone.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$("body").on("click", ".listing_delete", function () {
+				if (!confirm("Are you sure you wish to delete?"))
+					return false;
+
+				$(this).find("form").submit();
+			});
+		});
+	</script>
 
 	@yield('extra-scripts')
 
