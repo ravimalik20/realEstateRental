@@ -19,6 +19,8 @@ Route::get('/listing/search', 'ListingController@search');
 Route::post('/listing/image/upload', 'ListingController@uploadImage');
 Route::resource('listing', 'ListingController');
 
+Route::resource('listing.contact', 'ListingContactController');
+
 Route::post('post/comment', 'BlogController@addComment');
 Route::resource('blog', 'BlogController');
 

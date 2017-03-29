@@ -51,6 +51,11 @@ class Listing extends Model
 		return $this->belongsToMany(Restrictions::class, 'listing_restrictions', 'listing_id', 'restriction_id');
 	}
 
+	public function contacts()
+	{
+		return $this->hasMany(ListingContact::class, "listing_id", "id");
+	}
+
 	public function photos()
 	{
 		return $this->hasMany(ListingPhoto::class, 'listing_id', 'id');

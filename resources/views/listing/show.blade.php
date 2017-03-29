@@ -153,8 +153,36 @@
 							</div>
 						</div>
 					</div>
-					
 				</div>
+
+				@if(\Auth::user() && \Auth::user()->id == $listing->user_id)
+				<h2 class="text-uppercase bottom20">Contacts</h2>
+				<div class="row bottom40">
+					<div class="col-md-12 bottom20">
+					@if (count($listing->contacts) > 0)
+
+						<?php
+							$contacts = $listing->contacts()->paginate(4);
+						?>
+
+						<div class="row">
+						@foreach($contacts as $contact)
+							<div class="col-lg-3">
+								<p><i class="fa fa-user"></i> {{$contact->name}}</p>
+								<p><i class="fa fa-phone"></i> {{$contact->phone}}</p>
+								<p><i class="fa fa-user"></i> {{$contact->message}}</p>
+							</div>
+						@endforeach
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								{!! $contacts->render() !!}
+							</div>
+						</div>
+					@endif
+					</div>
+				</div>
+				@endif
 				
 			</div>
 			<aside class="col-md-4 col-xs-12" style="margin-top: 2%;">
@@ -191,6 +219,22 @@
 					</div>
 					
 				</div>
+
+				<div class="col-sm-12 bottom40">
+                  <form class="callus" action="/listing/{{$listing->id}}/contact" method="POST">
+					{{ csrf_field() }}
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" name="name" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Phone Number" name="phone" required>
+                     </div>
+                     <div class="form-group">
+                        <textarea class="form-control" placeholder="Message" name="message" required></textarea>
+                     </div>
+                     <input type="submit" class="btn-blue uppercase border_radius" value="submit now">
+                  </form>
+               </div>
 			</aside>
 		</div>
 	</div>

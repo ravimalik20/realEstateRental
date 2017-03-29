@@ -33,6 +33,11 @@ class User extends Authenticatable
 			->orderBy('created_at', 'DESC');
 	}
 
+	public function contacts()
+	{
+		return $this->hasMany(\App\Models\ListingContact::class, 'listing_user_id', 'id');
+	}
+
 	public function getNameAttribute()
 	{
 		return $this->first_name . " " . $this->last_name;

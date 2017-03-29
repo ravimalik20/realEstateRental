@@ -104,7 +104,7 @@
 				  @if (\Auth::user())
 				  <li><a href="/listing/create">Create Listing</a></li>
 				  <li><a href="/posts/create">Create Blog</a></li>
-                  <li class="dropdown">
+				  <li class="dropdown">
 		              <a href="#." class="dropdown-toggle" data-toggle="dropdown">{{ \Auth::user()->name }}</a>
 		              <ul class="dropdown-menu animated fadeOut" style="display: none; opacity: 1;">
 						  <li><a href="/profile">Profile</a></li>
