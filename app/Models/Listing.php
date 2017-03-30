@@ -194,10 +194,14 @@ class Listing extends Model
 			$listings = $listings->whereIn('restriction_id', $request->restriction);
 		}
 
-		if ($paginate)
-			$listings = $listings->distinct()->paginate($paginate);
-		else
+		if ($paginate) {
+			$ids = $listings->distinct()->pluck("listing.id");
+
+			$listings = Listing::whereIn("listing.id", $ids)->paginate($paginate);
+		}
+		else {
 			$listings = $listings->distinct()->get();
+		}
 
 		return $listings;
 	}

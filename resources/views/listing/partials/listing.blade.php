@@ -48,5 +48,13 @@
 
 </div>
 
+@if (isset($listings) && count($listings) > 0)
+<div class="row">
+	<div class="col-lg-12">
+		{!! $listings->render() !!}
+	</div>
+</div>
+@endif
+
 
 
