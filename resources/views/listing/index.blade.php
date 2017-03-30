@@ -337,10 +337,10 @@
           <form class="callus">
             <div class="single-query">
               <div class="intro">
-                <select>
-                  <option class="active">Newest</option>
-                  <option>Price</option>
-                  <option>Oldest</option>
+                <select name="order_by">
+                  <option class="active" value="new">Newest</option>
+                  <option value="price">Price</option>
+                  <option value="old">Oldest</option>
                 </select>
               </div>
             </div>

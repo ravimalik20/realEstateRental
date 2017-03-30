@@ -194,10 +194,22 @@ class Listing extends Model
 			$listings = $listings->whereIn('restriction_id', $request->restriction);
 		}
 
-		if ($paginate) {
-			$ids = $listings->distinct()->pluck("listing.id");
+		$ids = $listings->distinct()->pluck("listing.id");
+		$listings = Listing::whereIn("listing.id", $ids);
 
-			$listings = Listing::whereIn("listing.id", $ids)->paginate($paginate);
+		if ($request->order_by == "price") {
+			$listings = $listings->orderBy("rent", "DESC");
+		}
+		else if ($request->order_by == "old") {
+			$listings = $listings->orderBy("created_at", "ASC");
+		}
+		else {
+			$listings = $listings->orderBy("created_at", "DESC");
+		}
+
+
+		if ($paginate) {
+			$listings = $listings->paginate($paginate);
 		}
 		else {
 			$listings = $listings->distinct()->get();
