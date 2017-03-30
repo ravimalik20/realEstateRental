@@ -171,7 +171,7 @@ class ListingController extends Controller
 	{
 		$user_id = $request->user_id ? $request->user_id: null;
 
-		$listings = Listing::search($request, $user_id, 3);
+		$listings = Listing::search($request, $user_id, 8);
 
 		return view('listing.partials.listing', compact('listings'));
 	}
