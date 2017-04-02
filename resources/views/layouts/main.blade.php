@@ -109,7 +109,7 @@
 		              <ul class="dropdown-menu animated fadeOut" style="display: none; opacity: 1;">
 						  <li><a href="/profile">Profile</a></li>
 		                  <li>
-							<a href="{{ route('logout') }}"
+							<a href="{{ route('logout') }}" class="logout_button"
 				                onclick="event.preventDefault();
 				                         document.getElementById('logout-form').submit();">
 				                Logout

@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
 		$this->call(\CountrySeeder::class);
 		$this->call(\InitialPaymentTypeSeeder::class);
 		$this->call(\ProgramSeeder::class);
+		$this->call(\UserSeeder::class);
     }
 }
