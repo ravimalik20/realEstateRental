@@ -145,7 +145,7 @@ class ListingController extends Controller
         $listing = Listing::findOrFail($id);
 		$listing = Listing::updateObj($listing, $request);
 
-		return redirect('/listing');
+		return redirect('/home');
     }
 
     /**
