@@ -6,6 +6,45 @@
 
 @section('content')
 
+<!--Slider-->
+<div class="rev_slider_wrapper">
+  <div id="rev_slider_third" class="rev_slider"  data-version="5.0">
+    <ul>
+	  @if (isset($listings) && count($listings) > 0)
+	  @foreach ($listings as $listing)
+      <!-- SLIDE  -->
+      <li data-transition="fade">
+        <img src="{{$listing->thumbnail()}}" alt="" data-bgposition="center center" data-bgfit="cover">
+        <div class="black-caption tp-caption tp-resizeme"
+         data-start="1300"
+          data-x="['left','left','center','center']" data-hoffset="['0','0','0','15']" 
+          data-y="['center','center','center','center']" data-voffset="['0','0','0','0']" 
+          data-responsive_offset="on" 
+          data-transform_idle="o:1;"
+          data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;" 
+		  data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;">
+          <div class="price">For Rent</div>
+          <h2>{{$listing->address}}</h2>{{$listing->address}} {{$listing->city}} {{$listing->province}}
+            
+          </p>
+          <div class="property_meta"> 
+            <span><i class="fa fa-home"></i>{{$listing->num_bedrooms}} Bedrooms</span> 
+            <span><i class="fa fa-bed"></i>{{$listing->num_bathrooms}} Bathrooms</span> 
+            <span><i class="fa fa-car"></i>{{$listing->num_parking}} Parking Space</span> 
+          </div>
+          <div class="bottom row">
+            <div class="col-sm-6"><span> <i class="fa fa-address-card"></i>{{$listing->city}}, {{$listing->province}}</span></div>
+            <div class="col-sm-6"><span>${{$listing->rent}} Per Month -<small> {{$listing->housingType->name}}</small></span></div>
+          </div>
+        </div>
+      </li>
+	  @endforeach
+	  @endif
+    </ul>
+  </div>
+  <!-- END REVOLUTION SLIDER -->
+</div>
+
 <!--Advance Search-->
 <section class="property-query-area bg_light">
   <div class="container">
