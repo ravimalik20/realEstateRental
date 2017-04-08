@@ -49,14 +49,14 @@
 		        <div class="icons"><i class="fa fa-phone"></i></div>
 		        <ul>
 		          <li><strong>Phone Number</strong></li>
-		          <li>+1 519-748-5220</li>
+		          <li>+1 719-756-1230</li>
 		        </ul>
 		      </div>
 		      <div class="info-box">
 		        <div class="icons"><i class="fa fa-building"></i></div>
 		        <ul>
-		          <li><strong>Conestoga College</strong></li>
-		          <li>Ontario, Canada</li>
+		          <li><strong>York University</strong></li>
+		          <li>Toronto, Ontario, Canada</li>
 		        </ul>
 		      </div>
 		      <div class="info-box">
